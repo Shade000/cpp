@@ -67,7 +67,7 @@ void String::pasteSymbol(char symbol, int index)
 	++size;
 	char* textBuffer = str_;
 	str_ = new char[size];
-	strncpy_s(str_, index + 1, textBuffer, _TRUNCATE);	 
+	strncpy_s(str_, index + 1, textBuffer, _TRUNCATE);
 	str_[index] = symbol;
 	for (int i = index + 1; i < size; ++i)
 	{
@@ -88,7 +88,7 @@ void String::toUpperRegister()
 	int i = 0;
 	while (str_[i] != '\0')
 	{
-		if ((int)str_[i] >= 'a' && (int)str_[i] <= 'z')
+		if (str_[i] >= 'a' && str_[i] <= 'z')
 		{
 			str_[i] += TO_UPPER_REGISTER;
 		}
@@ -101,7 +101,7 @@ void String::toLowerRegister()
 	int i = 0;
 	while (str_[i] != '\0')
 	{
-		if ((int)str_[i] >= 'A' && (int)str_[i] <= 'Z')
+		if (str_[i] >= 'A' && str_[i] <= 'Z')
 		{
 			str_[i] += TO_LOWER_REGISTER;
 		}
